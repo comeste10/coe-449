@@ -1,0 +1,23 @@
+previous lab:
+	read in as short - 16 bits
+	most significant 4 bits unused
+
+space-efficient compression:
+	use 3 bytes to store 2 data points
+
+compression algorithm:
+
+
+	odd data values - shift left by 4 bits, store in "1.5 bytes" or 12 bits
+
+			- stores in 2 bytes --> 0000 0000 | 1111 xxxx
+
+			- check to see if it is the last value
+
+
+	even data value - don't shift, 4 MSB's share a byte with previous odd value
+
+			- stores in 2 bytes --> xxxx 0000 | 0000 0000
+
+			- check to see if it is the last value
+
